@@ -1,17 +1,15 @@
-const calcTip = (billValue) => {
-  if (billValue >= 50 && billValue <= 300) {
-    return billValue * 0.15;
-  } else {
-    return billValue * 0.2;
-  }
+const bills = [275, 40, 430];
+
+const calcTip = (bill) => {
+  const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+  const totalValue = bill + tip;
+
+  console.log(
+    `The bill was ${bill}, the tip was ${tip.toFixed(
+      2
+    )}, and the total value ${totalValue.toFixed(2)}`
+  );
 };
 
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-const tips = [];
-const totals = [];
-for (let index = 0; index < bills.length; index++) {
-  const tip = calcTip(bills[index]);
-  tips.push(tip);
-  totals.push(tip + bills[index]);
-}
-console.log(bills, tips, totals);
+bills.forEach(calcTip);
