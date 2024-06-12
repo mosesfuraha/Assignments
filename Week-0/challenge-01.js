@@ -4,13 +4,13 @@ const calcAveragee = (scoreOne, scoreTwo, scoreThree) => {
 };
 
 const avgKoalasScore = calcAveragee(22, 33, 44);
-console.log("The avergae of Koalas is", avgKoalas);
+console.log("The avergae of Koalas is", avgKoalasScore);
 const avgDolphinsScore = calcAveragee(12, 34, 1);
-console.log("the average of Dolphins is ", avgDolphins);
-const checkWinner = function (avgDolphins, avgKoalas) {
-  if (avgDolphins >= 2 * avgKoalas) {
+console.log("the average of Dolphins is ", avgDolphinsScore);
+const checkWinner = function (avgDolphinsScore, avgKoalasScore) {
+  if (avgDolphinsScore >= 2 * avgKoalasScore) {
     console.log(`Dolphins are the winner`);
-  } else if (avgDolphins >= 2 * avgDolphins) {
-    console.log("Kaolas won");
+  } else if (avgDolphinsScore >= 2 * avgDolphinsScore) {
+    console.log("Kaolas");
   }
 };
