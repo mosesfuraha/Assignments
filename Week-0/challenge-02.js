@@ -1,6 +1,3 @@
-const calcAge = (birthYear) => {
-  return 2037 - birthYear;
-};
 
 const calcTip = (billValue) => {
   if (billValue >= 50 && billValue <= 300) {
