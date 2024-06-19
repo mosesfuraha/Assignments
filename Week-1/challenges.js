@@ -107,7 +107,7 @@ console.log(wordCount("momses msms"));
 //average
 // const average = (arr) => arr.reduce((acc, val) => acc + val) / arr.length;
 
-// // Example usage:
+// Example usage:
 // let numbers = [1, 2, 3, 4, 5];
 // let avg = average(numbers);
 // console.log(avg);
