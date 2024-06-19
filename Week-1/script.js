@@ -59,7 +59,9 @@ function addOrUpdateTask() {
   let dueDate = taskDateInput.value;
 
   if (title && description && dueDate) {
+    //checks if the task is being edited , isEditTask is true, isEdit is false when a new task is added
     if (isEditTask) {
+      
       todos[editId] = {
         title,
         description,
@@ -86,8 +88,7 @@ function clearInputFields() {
 
 // Update task status
 function updateTaskStatus(taskId) {
-  todos[taskId].status =
-    todos[taskId].status === "completed" ? "pending" : "completed";
+  todos[taskId].status = todos[taskId].status === "completed" ? "pending" : "completed";
   localStorage.setItem("todo-list", JSON.stringify(todos));
   showTodoList();
 }

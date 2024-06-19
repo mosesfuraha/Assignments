@@ -1,0 +1,60 @@
+{
+  "gallery": [
+    {
+      "id": 1,
+      "url": "images/image1.jpg",
+      "caption": "Beautiful sunset over the mountains.",
+      "nextId": 2,
+      "prevId": 5
+    },
+    {
+      "id": 2,
+      "url": "images/image2.jpg",
+      "caption": "A serene beach with crystal clear water.",
+      "nextId": 3,
+      "prevId": 1
+    },
+    {
+      "id": 3,
+      "url": "images/image3.jpg",
+      "caption": "A bustling cityscape at night.",
+      "nextId": 4,
+      "prevId": 2
+    },
+    {
+      "id": 4,
+      "url": "images/image4.jpg",
+      "caption": "A lush green forest in spring.",
+      "nextId": 5,
+      "prevId": 3
+    },
+    {
+      "id": 5,
+      "url": "images/image5.jpg",
+      "caption": "A majestic waterfall cascading down rocks.",
+      "nextId": 1,
+      "prevId": 4
+    },
+    {
+      "id": 6,
+      "url": "images/image6.jpg",
+      "caption": "A majestic waterfall cascading down rocks.",
+      "nextId": 1,
+      "prevId": 4
+    },
+    {
+      "id": 7,
+      "url": "images/image7.jpg",
+      "caption": "A majestic waterfall cascading down rocks.",
+      "nextId": 1,
+      "prevId": 4
+    },
+    {
+      "id": 8,
+      "url": "images/image8.jpg",
+      "caption": "A majestic waterfall cascading down rocks.",
+      "nextId": 1,
+      "prevId": 4
+    }
+  ]
+}
