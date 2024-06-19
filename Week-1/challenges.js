@@ -1,8 +1,5 @@
-// function capitalize(str) {
-//   return str.charAt(0).toUpperCase() + str.slice(1);
-//   //gets a character at the first index,  the slice() extracts the substring starting from second index to zero
-// }
-
+//Capitalize Function
+//gets a character at the first index,  the slice() extracts the substring starting from second index to zero
 // function capitalize(str) {
 //   if (typeof str !== "string" || str.length === 0) {
 //     throw new Error("Invalid input: expected a non-empty string.");
@@ -14,52 +11,36 @@
 
 //2
 // function reverseStr(str) {
+//   if (typeof str !== "string" || str.length === 0) {
+//     throw new Error("Invalid input: expected a non-empty string.");
+//   }
 //   return str.split("").reverse().join("");
 // }
 // console.log(reverseStr("moses"));
 
 //without using built in functions
-
 //3
 // function isPalindrome(str) {
-//   // Convert the input to a string and remove non-alphanumeric characters
-//   let cleanStr = str
-//     .toString()
-//     .replace(/[^a-z0-9]/gi, "")
-//     .toLowerCase();
-
-//   // Reverse the cleaned string
-//   let reversedStr = cleanStr.split("").reverse().join("");
-
-//   // Check if the cleaned string is equal to its reversed version
-//   if (cleanStr === reversedStr) {
-//     console.log("This is a palindrome");
-//   } else {
-//     console.log("Not a palindrome");
+//   if (typeof str !== "string" || str.length === 0) {
+//     throw new Error("Invalid input: expected a non-empty string.");
 //   }
+//   let reversedStr = reverseStr(str);
+//   return reversedStr === str;
 // }
 
-// // Test cases
-// isPalindrome("A man, a plan, a canal, Panama"); // This is a palindrome
-// isPalindrome("racecar"); // This is a palindrome
-// isPalindrome("hello"); // Not a palindrome
+// Test cases
+
+// console.log(isPalindrome("madam"));
 
 //4
 
 // function wordCount(str) {
-//   // Remove leading and trailing whitespace with trim()
-//   str = str.trim();
-
-//   // Split the string by spaces and filter out empty strings
-//   let words = str.split(" ").filter(function (word) {
-//     return word.length > 0;
-//   });
-
-//   // Return the number of words
-//   return words.length;
+  // Split the string by spaces and filter out empty strings
+//   let words = str.split(" ").length;
+//   return words;
 // }
 
-// console.log(wordCount("momses msms"));
+// console.log(wordCount("momses msms cbcbc ncnc"));
 
 //1
 //doubling an array
@@ -153,7 +134,7 @@
 //   console.log(`${person.firstName} ${person.lastName}, age ${person.age}`);
 // });
 
-// // Test the isAdult method
+// Test the isAdult method
 // console.log(person1.isAdult()); // true
 // console.log(`My name is ${person1.firstName}, ${person1.lastName}`); // My name is Moses, Furaha
 
@@ -161,27 +142,27 @@
 //getting two functions and then compose them
 
 //function one doubling array
-function double(arr) {
-  let doubleArray = [];
-  for (let i = 0; i < arr.length; i++) {
-    doubleArray.push(arr[i] * 2);
-  }
-  return doubleArray;
-}
+// function double(arr) {
+//   let doubleArray = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     doubleArray.push(arr[i] * 2);
+//   }
+//   return doubleArray;
+// }
 
-//function two as getting the sum
-function sum(arr) {
-  return arr.reduce((a, b) => a + b, 0);
-}
+// //function two as getting the sum
+// function sum(arr) {
+//   return arr.reduce((a, b) => a + b, 0);
+// }
 
-//create a funciton compose that takes the functions as parameters
-function compose(f, g) {
-  return function (x) {
-    return f(g(x));
-  };
-}
-//call the compose function
-const checkCompose = compose(sum, double);
-const array = [1, 2, 3, 4, 5, 6];
+// //create a funciton compose that takes the functions as parameters
+// function compose(f, g) {
+//   return function (x) {
+//     return f(g(x));
+//   };
+// }
+// //call the compose function
+// const checkCompose = compose(sum, double);
+// const array = [1, 2, 3, 4, 5, 6];
 
-console.log(checkCompose(array));
+// console.log(checkCompose(array));
