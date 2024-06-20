@@ -62,19 +62,28 @@ function hideLightbox() {
 
 function navigateLightbox(direction) {
   if (direction === "next") {
-    currentIndex = (currentIndex + 1) % galleryData.gallery.length;
+    currentIndex++;
+    // If currentIndex exceeds the last index, reset it to 0
+    if (currentIndex >= galleryData.gallery.length) {
+      currentIndex = 0;
+    }
   } else {
-    currentIndex =
-      (currentIndex - 1 + galleryData.gallery.length) %
-      galleryData.gallery.length;
+    currentIndex--;
+    // If currentIndex goes below 0, set it to the last index
+    if (currentIndex < 0) {
+      currentIndex = galleryData.gallery.length - 1;
+    }
   }
+
   showLightbox(currentIndex);
 }
 
+// The initializeGallery function sets up the image gallery by creating image elements for each image in the galleryData,
 function initializeGallery() {
   const galleryContainer = document.querySelector(".gallery");
 
   galleryData.gallery.forEach((image, index) => {
+    // Create a div element to wrap the image
     const imgWrapper = document.createElement("div");
     imgWrapper.classList.add("image-wrapper");
 
@@ -82,12 +91,14 @@ function initializeGallery() {
     imgElement.src = image.url;
     imgElement.alt = image.caption;
     imgElement.classList.add("image");
+
+    // When the image is clicked, the showLightbox function is called with the index of the image
     imgElement.addEventListener("click", () => showLightbox(index));
 
     imgWrapper.appendChild(imgElement);
     galleryContainer.appendChild(imgWrapper);
   });
-
+  // This element is presumably the close button for the lightbox
   document.querySelector(".fa-times").addEventListener("click", hideLightbox);
   document
     .querySelector(".prev")
