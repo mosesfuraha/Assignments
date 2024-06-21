@@ -53,7 +53,7 @@ binded();
 //Event Handlers and this
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.getElementById("this-btn");
-//using regular function
+  //using regular function
   button.addEventListener("click", function handleClick() {
     console.log(`Button Id: ${this.id}`);
     console.log(`Button Text : ${this.textContent}`);
@@ -73,8 +73,9 @@ document.getElementById("elementId").addEventListener("click", function () {
 });
 function createTimer(duration, elementId) {
   let time = duration;
+
   // Closure to store the timer's state and handle the timer logic
-  function Timer(element) {
+  function getTime(element) {
     this.element = element;
     this.time = time;
     // callback function to update time
@@ -96,5 +97,5 @@ function createTimer(duration, elementId) {
 
   // Get the DOM element and create a Timer instance
   const element = document.getElementById(elementId);
-  new Timer(element);
+  new getTime(element);
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Advice generator app</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="advice-container">
+      <h1 id="advice-id">Advice #</h1>
+      <p id="text"></p>
+
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcset="images/pattern-divider-mobile.svg"
+        />
+        <img src="./images/pattern-divider-mobile.svg" alt="" />
+      </picture>
+      <div>
+        <button onclick="fetchAdvice()">
+          <img src="./images//icon-dice.svg" alt="" class="icon-img" />
+        </button>
+      </div>
+    </div>
+
+    <script src="./advices.js"></script>
+  </body>
+</html>
