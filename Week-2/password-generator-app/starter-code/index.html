@@ -20,19 +20,19 @@
           class="passBox"
           id="passBox"
           disabled
-          placeholder="P4$WOrD !"
+          placeholder=" P4$WOrD !"
         />
-        <span class="material-icons" id="copyIcon">content_copy</span>
+        <span class="material-icons" id="copyIcon" style="cursor: pointer;">content_copy</span>
       </div>
-      <div class="password-content">
+      <form class="password-content" id="passwordGenerator">
         <div class="row">
           <p>Character Length</p>
-          <span id="sliderValue">40</span>
+          <input type="text" id="sliderValue" value="10" class="styled-input" />
         </div>
-        <input type="range" min="1" max="30" value="8" id="inputSlider" />
+        <input type="range" min="1" max="50" value="10" id="inputSlider" />
         <div class="row">
           <input type="checkbox" name="lowercase" id="lowercase" checked />
-          <label for="lowercase">Include Lowercase</label>
+          <label for="lowercase">Include Lowercase Letters</label>
         </div>
         <div class="row">
           <input type="checkbox" name="uppercase" id="uppercase" checked />
@@ -46,8 +46,9 @@
           <input type="checkbox" name="symbols" id="symbols" checked />
           <label for="symbols">Include Symbols</label>
         </div>
-        <div class="row strength-row">
-          <span>Password Strength: MEDIUM</span>
+        <div class="strength-row">
+          <span class="str-txt">Strength</span>
+          <span class="mdm-txt">MEDIUM</span>
           <div class="strength-indicator">
             <div class="strength-bar filled"></div>
             <div class="strength-bar filled"></div>
@@ -55,11 +56,17 @@
             <div class="strength-bar empty"></div>
           </div>
         </div>
-        <button type="button" class="genBtn" id="genBtn">
+        <button type="submit" class="genBtn" id="genBtn">
           Generate Password
+          <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill="#24232C"
+              d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
+            />
+          </svg>
         </button>
-      </div>
+      </form>
     </div>
-    <script src="script.js"></script>
+    <script src="password.js"></script>
   </body>
 </html>
