@@ -36,7 +36,8 @@ passwordGenerator.addEventListener("submit", (e) => {
     includeSymbols
   );
   passwordDisplay.value = password;
-  passwordDisplay.style.color = "lightgray";
+  passwordDisplay.style.color = "lightgray"; // Set password color to light gray
+  passwordDisplay.style.fontSize = "24px"; // Increase font size of the password
 
   genBtn.innerHTML =
     'Generate Password <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>';
@@ -45,6 +46,8 @@ passwordGenerator.addEventListener("submit", (e) => {
 copyIcon.addEventListener("click", () => {
   navigator.clipboard.writeText(passwordDisplay.value).then(() => {
     passwordDisplay.value = "Copied!";
+    passwordDisplay.style.color = "var(--button-color)"; // Set copied text color to button color
+    passwordDisplay.style.fontSize = "24px"; // Increase font size of the copied text
     setTimeout(() => {
       const chrAmount = characterNumber.value;
       const lowerCase = lowerCaseElement.checked;
@@ -59,7 +62,8 @@ copyIcon.addEventListener("click", () => {
         includeSymbols
       );
       passwordDisplay.value = password;
-      passwordDisplay.style.color = "lightgray";
+      passwordDisplay.style.color = "lightgray"; // Reset password color to light gray
+      passwordDisplay.style.fontSize = "24px"; // Maintain increased font size for password
     }, 1000);
   });
 });
@@ -82,7 +86,12 @@ function generatePassword(
       charCodes[Math.floor(Math.random() * charCodes.length)];
     passwordCharacters.push(String.fromCharCode(characterCode));
   }
-  return passwordCharacters.join("");
+  const password = passwordCharacters.join("");
+
+  // Check password strength
+  checkPasswordStrength(password);
+
+  return password;
 }
 
 function arrayFromLowToHigh(low, high) {
@@ -98,3 +107,67 @@ function syncCharacterAmount(e) {
   characterNumber.value = value;
   characterRange.value = value;
 }
+
+//checking the stregnth of the password
+
+function checkPasswordStrength(password) {
+  let strength = 0;
+
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasNumbers = /[0-9]/.test(password);
+  const hasSymbols = /[!@#\$%\^\&*\)\(+=._-]+/.test(password);
+
+  if (hasLowerCase) strength++;
+  if (hasUpperCase) strength++;
+  if (hasNumbers) strength++;
+  if (hasSymbols) strength++;
+  if (password.length >= 8) strength++;
+
+  updateStrengthBars(strength);
+}
+
+function updateStrengthBars(strength) {
+  const strengthBars = document.querySelectorAll(".strength-bar");
+  const strengthText = document.querySelector(".mdm-txt");
+
+  strengthBars.forEach((bar, index) => {
+    bar.classList.remove("weak", "medium", "strong", "filled");
+    if (index < strength) {
+      bar.classList.add("filled");
+      if (strength <= 2) {
+        bar.classList.add("weak");
+      } else if (strength === 3) {
+        bar.classList.add("medium");
+      } else {
+        bar.classList.add("strong");
+      }
+    }
+  });
+
+  switch (strength) {
+    case 0:
+    case 1:
+      strengthText.textContent = "TOO WEAK !"
+      break;
+    case 2:
+      strengthText.textContent = "WEAK";
+      break;
+    case 3:
+      strengthText.textContent = "MEDIUM";
+      break;
+    case 4:
+    case 5:
+      strengthText.textContent = "STRONG";
+      break;
+    default:
+      strengthText.textContent = "";
+  }
+}
+
+window.onload = function () {
+  lowerCaseElement.checked = false;
+  upperCaseElement.checked = false;
+  numbersElement.checked = false;
+  symbolsElement.checked = false;
+};
