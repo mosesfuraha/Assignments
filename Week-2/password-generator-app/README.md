@@ -14,10 +14,12 @@ I developed this app to create random passwords and evaluate their strength, ind
 ## Screenshots
 
 ### 1. Large Screens
-![Desktop Design](/starter-code/assets/images/desktop-screen.png)
+
+<img src="/starter-code/assets/images/desktop-screen.png" alt="Desktop Design" width="600">
 
 ### 2. Small Screens
-![Mobile Design](/starter-code//assets/images/mobile-screen.png)
+
+<img src="/starter-code/assets/images/mobile-screen.png" alt="Mobile Design" width="300">
 
 ## Learning Objectives
 
@@ -42,11 +44,12 @@ While developing this project, I focused on the following learning objectives:
 ### HTML Structure
 
 I created the necessary HTML elements for:
-  - A slider for password length.
-  - Checkboxes for character types.
-  - A button to generate the password.
-  - A button to copy the password.
-  - A strength indicator.
+
+- A slider for password length.
+- Checkboxes for character types.
+- A button to generate the password.
+- A button to copy the password.
+- A strength indicator.
 
 ### CSS Styling
 
@@ -55,11 +58,12 @@ I styled the elements according to the provided design and ensured the layout is
 ### JavaScript Functionality
 
 I wrote functions to:
-  - Generate a random character based on selected criteria.
-  - Generate a password based on user input.
-  - Update the password display area with the generated password.
-  - Calculate the strength of the password.
-  - Copy the generated password to the clipboard.
+
+- Generate a random character based on selected criteria.
+- Generate a password based on user input.
+- Update the password display area with the generated password.
+- Calculate the strength of the password.
+- Copy the generated password to the clipboard.
 
 I used ES6 classes to structure my JavaScript code and leveraged `let` and `const` for variable declarations. I applied default parameters for flexibility in function arguments and utilized spread syntax and rest parameters to streamline array and function argument handling.
 
