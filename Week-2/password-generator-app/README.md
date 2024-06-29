@@ -15,11 +15,11 @@ I developed this app to create random passwords and evaluate their strength, ind
 
 ### 1. Large Screens
 
-<img src="/starter-code/assets/images/desktop-screen.png" alt="Desktop Design" width="600">
+<img src="/assets/images/desktop-screen.png" alt="Desktop Design" width="600">
 
 ### 2. Small Screens
 
-<img src="/starter-code/assets/images/mobile-screen.png" alt="Mobile Design" width="300">
+<img src="/assets/images/mobile-screen.png" alt="Mobile Design" width="300">
 
 ## Learning Objectives
 
