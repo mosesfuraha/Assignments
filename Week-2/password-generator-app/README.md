@@ -1,3 +1,3 @@
-#Password Generetor
+# Password Generator
 
-## This App helps in creating a random password generator, tells you weather its weak or strong and medium
+## This app creates random passwords and evaluates their strength, indicating whether they are weak, strong, or medium.
